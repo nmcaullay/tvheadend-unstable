@@ -28,6 +28,7 @@ RUN apt-get update -qq && \
 #Expose the TVH ports
 EXPOSE 9981 9982
 
+
 #Make the folders
 RUN mkdir /config
 RUN mkdir /tvrecordings
