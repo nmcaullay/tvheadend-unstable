@@ -5,7 +5,7 @@ ENV DEBIAN_FRONTEND noninteractive
 # Set correct environment variables.
 ENV HOME /root
 
-#Create the HTS user
+#Create the HTS user (1000), and add to user group (100)
 RUN useradd -u 1000 -g 100 hts
 
 # Install dependencies, build and install tvheadend
