@@ -9,7 +9,8 @@ ENV HOME /root
 RUN useradd -u 1000 -g 100 hts
 
 RUN apt-get update -qq
-RUN apt-get install -qy git build-essential libargtable2-dev libavformat-ffmpeg-dev libsdl1.2-dev
+RUN apt-get install -qy git 
+RUN apt-get install -qy build-essential libargtable2-dev libavformat-ffmpeg-dev libsdl1.2-dev
 RUN git clone git://github.com/erikkaashoek/Comskip && \
     cd Comskip && \
     ./autogen.sh && \
