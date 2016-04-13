@@ -11,7 +11,7 @@ RUN useradd -u 1000 -g 100 hts
 # Install dependencies, build and install tvheadend
 RUN apt-get update -qq && \
     apt-get install -qy \
-    build-essential pkg-config libssl-dev git bzip2 wget \
+    build-essential pkg-config libssl-dev git bzip2 wget cmake \
     libavahi-client-dev zlib1g-dev libcurl4-gnutls-dev python \
     liburiparser1 liburiparser-dev gettext \
     libhdhomerun-dev dvb-apps && \
