@@ -1,4 +1,6 @@
 FROM phusion/baseimage:0.9.19
+
+# maintained by Nathan
 MAINTAINER nmcaullay <nmcaullay@gmail.com>
 ENV DEBIAN_FRONTEND noninteractive
 
