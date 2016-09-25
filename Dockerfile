@@ -47,4 +47,4 @@ RUN chown -R hts:100 /parentsmovies
 RUN chown -R hts:100 /timeshift
 
 #Start tvheadend when container starts 
-CMD ["/usr/bin/tvheadend","-C","-u","hts","-g","100","-c","/config"]
+CMD ["/usr/bin/tvheadend","-C","-u","hts","-g","hts","-c","/config"]
