@@ -41,11 +41,7 @@ EXPOSE 9981 9982
 
 #Expose the volumes
 VOLUME ["/config"]
-VOLUME ["/tvrecordings"]
-VOLUME ["/sport"]
-VOLUME ["/kidsmovies"]
-VOLUME ["/parentsmovies"]
-
+VOLUME ["/media"]
 
 #Set the permissions
 #RUN chown -R hts:hts /config
