@@ -7,8 +7,9 @@ ENV DEBIAN_FRONTEND noninteractive
 # Set correct environment variables.
 ENV HOME /root
 
-#Create the HTS user (1000), and add to user group (100)
-RUN useradd -u 1001 -g 100 hts
+#Create the HTS user (9981), and add to user group (9981)
+RUN groupadd -g 9981 hts
+RUN useradd -u 9981 -g 9981 hts
 
 # Install dependencies, build and install tvheadend
 RUN apt-get update -qq && \
@@ -39,12 +40,12 @@ RUN mkdir /parentsmovies
 RUN mkdir /timeshift
 
 #Set the permissions
-RUN chown -R hts:100 /config
-RUN chown -R hts:100 /tvrecordings
-RUN chown -R hts:100 /sport
-RUN chown -R hts:100 /kidsmovies
-RUN chown -R hts:100 /parentsmovies
-RUN chown -R hts:100 /timeshift
+#RUN chown -R hts:hts /config
+#RUN chown -R hts:100 /tvrecordings
+#RUN chown -R hts:100 /sport
+#RUN chown -R hts:100 /kidsmovies
+#RUN chown -R hts:100 /parentsmovies
+#RUN chown -R hts:100 /timeshift
 
 #Start tvheadend when container starts 
-CMD ["/usr/bin/tvheadend","-C","-f","-u","hts","-g","users","-c","/config"]
+CMD ["/usr/bin/tvheadend","-C","-u","hts","-g","hts","-c","/config"]
