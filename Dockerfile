@@ -32,12 +32,20 @@ RUN apt-get update -qq && \
 EXPOSE 9981 9982
 
 #Make the folders
-RUN mkdir /config
-RUN mkdir /tvrecordings
-RUN mkdir /sport
-RUN mkdir /kidsmovies
-RUN mkdir /parentsmovies
-RUN mkdir /timeshift
+#RUN mkdir /config
+#RUN mkdir /tvrecordings
+#RUN mkdir /sport
+#RUN mkdir /kidsmovies
+#RUN mkdir /parentsmovies
+##RUN mkdir /timeshift
+
+#Expose the volumes
+VOLUME ["/config"]
+VOLUME ["/tvrecordings"]
+VOLUME ["/sport"]
+VOLUME ["/kidsmovies"]
+VOLUME ["/parentsmovies"]
+
 
 #Set the permissions
 #RUN chown -R hts:hts /config
@@ -47,5 +55,10 @@ RUN mkdir /timeshift
 #RUN chown -R hts:100 /parentsmovies
 #RUN chown -R hts:100 /timeshift
 
+#Set the user
+USER hts
+
 #Start tvheadend when container starts 
-CMD ["/usr/bin/tvheadend","-C","-u","hts","-g","hts","-c","/config"]
+#CMD ["/usr/bin/tvheadend","-C","-u","hts","-g","hts","-c","/config"]
+ENTRYPOINT ["/usr/bin/tvheadend","-C","-u","hts","-g","hts","-c","/config"]
+
