@@ -59,6 +59,6 @@ VOLUME ["/parentsmovies"]
 USER hts
 
 #Start tvheadend when container starts 
-#CMD ["/usr/bin/tvheadend","-C","-u","hts","-g","hts","-c","/config"]
-ENTRYPOINT ["/usr/bin/tvheadend","-C","-u","hts","-g","hts","-c","/config"]
+CMD ["/usr/bin/tvheadend","-C","-u","hts","-g","hts","-c","/config"]
+#ENTRYPOINT ["/usr/bin/tvheadend","-C","-u","hts","-g","hts","-c","/config"]
 
