@@ -18,7 +18,7 @@ RUN apt-get update -qq && \
     libavahi-client-dev zlib1g-dev libcurl4-gnutls-dev python \
     liburiparser1 liburiparser-dev gettext \
     libhdhomerun-dev dvb-apps \
-    autoconf automake libtool argtable2 && \
+    autoconf automake libtool libargtable2 && \
     cd /tmp && \
     git clone https://github.com/tvheadend/tvheadend.git && \
     cd tvheadend && \
