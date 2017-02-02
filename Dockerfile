@@ -23,7 +23,7 @@ RUN apt-get update -qq && \
 # build argtable2
 mkdir -p /tmp/argtable && \
 cd /tmp/argtable && \
-wget https://sourceforge.net/projects/argtable/files/argtable/argtable-2.13/argtable2-13.tar.gz && \
+wget https://sourceforge.net/projects/argtable/files/argtable/argtable-2.13/argtable2-13.tar.gz -O /tmp/argtable2-13.tar.gz && \
 tar xf /tmp/argtable2-13.tar.gz -C /tmp/argtable --strip-components=1 && \
 ./configure --prefix=/usr && \
 make && \
