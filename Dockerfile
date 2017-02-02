@@ -18,7 +18,7 @@ RUN apt-get update -qq && \
     libavahi-client-dev zlib1g-dev libcurl4-gnutls-dev python \
     liburiparser1 liburiparser-dev gettext \
     libhdhomerun-dev dvb-apps \
-    autoconf automake libtool libargtable2 && \
+    autoconf automake libtool && \
     
 # build argtable2
 mkdir -p /tmp/argtable && \
