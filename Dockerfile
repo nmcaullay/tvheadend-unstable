@@ -26,7 +26,15 @@ RUN apt-get update -qq && \
     ./configure --enable-hdhomerun_client --enable-hdhomerun_static --enable-libffmpeg_static --prefix=/usr && \
     make && \
     make install && \
-    rm -r /tmp/tvheadend && apt-get purge -qq build-essential pkg-config git && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+    git clone git://github.com/erikkaashoek/Comskip /tmp/comskip && \
+    cd /tmp/comskip && \
+    ./autogen.sh && \
+    ./configure \
+	--bindir=/usr/bin \
+	--sysconfdir=/config/comskip && \
+    make && \
+    make install && \
+    rm -r /tmp/comskip && rm -r /tmp/tvheadend && apt-get purge -qq build-essential pkg-config git && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 #Expose the TVH ports
 EXPOSE 9981 9982
