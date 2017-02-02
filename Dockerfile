@@ -18,6 +18,7 @@ RUN apt-get update -qq && \
     libavahi-client-dev zlib1g-dev libcurl4-gnutls-dev python \
     liburiparser1 liburiparser-dev gettext \
     libhdhomerun-dev dvb-apps && \
+    autoconf automake libtool && \
     cd /tmp && \
     git clone https://github.com/tvheadend/tvheadend.git && \
     cd tvheadend && \
