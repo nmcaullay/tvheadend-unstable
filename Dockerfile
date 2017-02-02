@@ -22,8 +22,8 @@ RUN apt-get update -qq && \
     
 # build argtable2
 mkdir -p /tmp/argtable && \
-wget "https://sourceforge.net/projects/argtable/files/argtable/argtable-2.13/argtable2-13.tar.gz" /tmp/argtable-src.tar.gz && \
 cd /tmp/argtable && \
+wget https://sourceforge.net/projects/argtable/files/argtable/argtable-2.13/argtable2-13.tar.gz && \
 tar xf /tmp/argtable2-13.tar.gz -C && \
 ./configure --prefix=/usr && \
 make && \
