@@ -19,6 +19,16 @@ RUN apt-get update -qq && \
     liburiparser1 liburiparser-dev gettext \
     libhdhomerun-dev dvb-apps \
     autoconf automake libtool libargtable2 && \
+    
+# build argtable2
+mkdir -p /tmp/argtable && \
+wget "https://sourceforge.net/projects/argtable/files/argtable/argtable-2.13/argtable2-13.tar.gz" /tmp/argtable-src.tar.gz && \
+cd /tmp/argtable && \
+./configure --prefix=/usr && \
+make && \
+make check && \
+make install && \
+ 
     cd /tmp && \
     git clone https://github.com/tvheadend/tvheadend.git && \
     cd tvheadend && \
