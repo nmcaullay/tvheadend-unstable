@@ -18,18 +18,20 @@ RUN apt-get update -qq && \
     libavahi-client-dev zlib1g-dev libcurl4-gnutls-dev python \
     liburiparser1 liburiparser-dev gettext \
     libhdhomerun-dev dvb-apps \
-    autoconf automake libtool && \
+    autoconf automake libtool \
+    libargtable2-dev libavformat-ffmpeg-dev libsdl1.2-dev && \
     
 # build argtable2
-mkdir -p /tmp/argtable && \
-cd /tmp/argtable && \
-wget https://sourceforge.net/projects/argtable/files/argtable/argtable-2.13/argtable2-13.tar.gz -O /tmp/argtable2-13.tar.gz && \
-tar xf /tmp/argtable2-13.tar.gz -C /tmp/argtable --strip-components=1 && \
-./configure --prefix=/usr && \
-make && \
-make check && \
-make install && \
- 
+#mkdir -p /tmp/argtable && \
+#cd /tmp/argtable && \
+#wget https://sourceforge.net/projects/argtable/files/argtable/argtable-2.13/argtable2-13.tar.gz -O /tmp/argtable2-13.tar.gz && \
+#tar xf /tmp/argtable2-13.tar.gz -C /tmp/argtable --strip-components=1 && \
+#./configure --prefix=/usr && \
+#make && \
+#make check && \
+#make install && \
+
+# build TVHeadend
     cd /tmp && \
     git clone https://github.com/tvheadend/tvheadend.git && \
     cd tvheadend && \
@@ -38,6 +40,8 @@ make install && \
     ./configure --enable-hdhomerun_client --enable-hdhomerun_static --enable-libffmpeg_static --prefix=/usr && \
     make && \
     make install && \
+    
+# build comskip
     git clone git://github.com/erikkaashoek/Comskip /tmp/comskip && \
     cd /tmp/comskip && \
     ./autogen.sh && \
