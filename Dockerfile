@@ -19,7 +19,7 @@ RUN apt-get update -qq && \
     liburiparser1 liburiparser-dev gettext \
     libhdhomerun-dev dvb-apps \
     autoconf automake libtool \
-    libargtable2-dev libavformat-ffmpeg-dev libsdl1.2-dev && \
+    libargtable2-dev ffmpeg && \
     
 # build argtable2
 #mkdir -p /tmp/argtable && \
