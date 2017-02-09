@@ -47,7 +47,7 @@ RUN apt-get update -qq && \
     ./autogen.sh && \
     ./configure \
 	--bindir=/usr/bin \
-	--sysconfdir=/config/comskip && \
+	--sysconfdir=/config/comskip \
 	--enable-static && \
     make && \
     make install && \
