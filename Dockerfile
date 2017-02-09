@@ -47,8 +47,8 @@ RUN apt-get update -qq && \
     ./autogen.sh && \
     ./configure \
 	--bindir=/usr/bin \
-	--sysconfdir=/config/comskip \
-	--enable-static && \
+	--sysconfdir=/config/comskip &&\
+	#--enable-static && \
     make && \
     make install && \
     rm -r /tmp/comskip && rm -r /tmp/tvheadend && apt-get purge -qq build-essential pkg-config git && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
