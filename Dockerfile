@@ -1,4 +1,4 @@
-FROM phusion/baseimage:0.9.19
+FROM phusion/baseimage:0.9.22
 
 # maintained by Nathan
 MAINTAINER nmcaullay <nmcaullay@gmail.com>
