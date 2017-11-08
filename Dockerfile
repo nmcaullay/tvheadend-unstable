@@ -11,7 +11,7 @@ ENV HOME /root
 #RUN groupadd -g 9981 hts
 RUN groupadd -g 1001 hts
 #RUN useradd -u 9981 -g 9981 hts
-RUN useradd -u 1001 -g 100 users
+RUN useradd -u 1001 -g 100 hts
 
 # Install dependencies, build and install tvheadend
 RUN apt-get update -qq && \
