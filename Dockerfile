@@ -9,7 +9,7 @@ ENV HOME /root
 
 #Create the HTS user (9981), and add to user group (9981)
 #RUN groupadd -g 9981 hts
-RUN groupadd -g 1001 hts
+RUN groupadd -g 100 hts
 #RUN useradd -u 9981 -g 9981 hts
 RUN useradd -u 1001 -g 100 hts
 
